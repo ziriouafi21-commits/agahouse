@@ -1,32 +1,129 @@
+```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agahouse | عقارات المستقبل</title>
+    <title>Agahouse - تسويق العقارات الاحترافي</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'fade-in-up': 'fadeInUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+                        'slide-up-smooth': 'slideUpSmooth 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+                        'glow-pulse': 'glowPulse 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(50px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        slideUpSmooth: {
+                            '0%': { transform: 'translateY(60px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        },
+                        glowPulse: {
+                            '0%, 100%': { boxShadow: '0 0 20px rgba(255, 215, 0, 0.3)' },
+                            '50%': { boxShadow: '0 0 40px rgba(255, 215, 0, 0.6)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: #f8f9fa; color: #333; }
-        header { background: #1a1a1a; color: #fff; padding: 60px 20px; text-align: center; border-bottom: 4px solid #c5a059; }
-        header h1 { margin: 0; font-size: 3rem; letter-spacing: 2px; }
-        header p { color: #c5a059; font-size: 1.2rem; margin-top: 10px; }
-        .container { max-width: 1000px; margin: 40px auto; padding: 20px; }
-        .welcome-box { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; }
-        .btn-whatsapp { background: #25d366; color: white; padding: 15px 30px; text-decoration: none; border-radius: 50px; display: inline-block; font-weight: bold; margin-top: 20px; transition: 0.3s; }
-        .btn-whatsapp:hover { background: #128c7e; transform: scale(1.05); }
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap');
+        body { font-family: 'Cairo', sans-serif; }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+        }
+        .gold-glow { 
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+        .property-card:hover {
+            transform: translateY(-10px);
+        }
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .scroll-reveal.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
     </style>
 </head>
-<body>
-    <header>
-        <h1>Agahouse</h1>
-        <p>تصميم وبيع العقارات العصرية بتقنيات الذكاء الاصطناعي</p>
-    </header>
-    <div class="container">
-        <div class="welcome-box">
-            <h2>مرحباً بكم في Agahouse</h2>
-            <p>نحن نعمل حالياً على تجهيز أفضل العروض العقارية المفروشة بأحدث تقنيات الـ AI.</p>
-            <p>قريباً ستجدون هنا فيديوهات جولة افتراضية للمنازل (Video Transformation).</p>
-            <a href="https://wa.me/212XXXXXXXXX" class="btn-whatsapp">تواصل معنا عبر واتساب</a>
+<body class="bg-gray-900 text-white overflow-x-hidden">
+
+    <!-- Hero Section -->
+    <section class="gradient-bg min-h-screen flex items-center justify-center relative overflow-hidden scroll-reveal" data-animation="slide-up-smooth">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 right-20 w-72 h-72 bg-yellow-500/20 rounded-full blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-20 left-20 w-96 h-96 bg-yellow-400/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
         </div>
-    </div>
-</body>
-</html>
+        
+        <div class="text-center px-6 z-10">
+            <h1 class="text-6xl md:text-8xl lg:text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-yellow-300 to-amber-500 mb-8 glow-pulse">
+                أغاهاوس
+            </h1>
+            <p class="text-xl md:text-2xl lg:text-3xl font-light text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
+                تسويق عقاري احترافي | بيع وشراء بأعلى الكفاءة والاحترافية
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#sell" class="bg-gradient-to-r from-yellow-500 to-amber-500 text-gray-900 px-12 py-4 rounded-full font-semibold text-lg hover:from-yellow-400 hover:to-yellow-500 transform hover:scale-105 transition-all duration-500 shadow-2xl shadow-yellow-500/25">
+                    <i class="fas fa-home mr-2"></i>
+                    بيع عقارك الآن
+                </a>
+                <a href="#listings" class="border-2 border-yellow-500 text-yellow-400 px-12 py-4 rounded-full font-semibold text-lg hover:bg-yellow-500 hover:text-gray-900 transition-all duration-500 transform hover:scale-105">
+                    <i class="fas fa-search mr-2"></i>
+                    العروض الحالية
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sell Your Property Section -->
+    <section id="sell" class="py-32 px-6 gradient-bg">
+        <div class="max-w-6xl mx-auto text-center scroll-reveal" data-animation="fade-in-up">
+            <div class="mb-20">
+                <h2 class="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-500 mb-6">
+                    بيع عقارك مع أغاهاوس
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                    نضمن لك أفضل السعر في أسرع وقت | فريق محترف من الخبراء
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-scroll-reveal="fade-in-up" data-delay="200">
+                <div class="group bg-gray-800/50 backdrop-blur-sm p-8 rounded-3xl border border-gray-700 hover:border-yellow-500/50 transition-all duration-700 hover:bg-gray-800/80 transform hover:-translateY-4 scroll-reveal" data-animation="fade-in-up">
+                    <div class="w-20 h-20 bg-gradient-to-br from-yellow-500 to-amber-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
+                        <i class="fas fa-bolt text-gray-900 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-white">بيع سريع</h3>
+                    <p class="text-gray-400 leading-relaxed">نتائج في أقل من 30 يوم</p>
+                </div>
+
+                <div class="group bg-gray-800/50 backdrop-blur-sm p-8 rounded-3xl border border-gray-700 hover:border-yellow-500/50 transition-all duration-700 hover:bg-gray-800/80 transform hover:-translateY-4 scroll-reveal" data-animation="fade-in-up">
+                    <div class="w-20 h-20 bg-gradient-to-br from-yellow-500 to-amber-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
+                        <i class="fas fa-chart-line text-gray-900 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-white">أعلى السعر</h3>
+                    <p class="text-gray-400 leading-relaxed">دراسة سوق دقيقة لضمان القيمة</p>
+                </div>
+
+                <div class="group bg-gray-800/50 backdrop-blur-sm p-8 rounded-3xl border border-gray-700 hover:border-yellow-500/50 transition-all duration-700 hover:bg-gray-800/80 transform hover:-translateY-4 scroll-reveal" data-animation="fade-in-up">
+                    <div class="w-20 h-20 bg-gradient-to-br from-yellow-500 to-amber-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
+                        <i class="fas fa-users text-gray-900 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-white">دعم كامل</h3>
+                    <p class="
