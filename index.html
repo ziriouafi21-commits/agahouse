@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AGA HOUSE | Luxury Real Estate Marketing</title>
+    <title>AGA HOUSE | تسويق العقارات الفاخرة</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -23,12 +23,12 @@
             border: 1px solid rgba(212, 175, 55, 0.1);
             transition: 0.4s;
         }
+        .lux-card:hover { border-color: #d4af37; transform: translateY(-5px); }
 
         #stars-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: #05070a; }
         .star { position: absolute; background: white; border-radius: 50%; opacity: 0.5; animation: twinkle var(--duration) infinite; }
         @keyframes twinkle { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
         
-        /* Floating WhatsApp */
         .float-wts {
             position: fixed; bottom: 30px; right: 30px;
             background-color: #25d366; color: white;
@@ -37,14 +37,13 @@
             font-size: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
             z-index: 1000; transition: 0.3s;
         }
-        .float-wts:hover { transform: scale(1.1); box-shadow: 0 0 20px rgba(37, 211, 102, 0.5); }
     </style>
 </head>
 <body>
 
     <div id="stars-container"></div>
 
-    <a href="https://wa.me/212639506866?text=I%20want%20to%20sell%20my%20property%20with%20AGA%20HOUSE" class="float-wts" target="_blank">
+    <a href="https://wa.me/212639506866" class="float-wts" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -53,19 +52,22 @@
             <img src="logo.png" alt="" class="max-w-[150px] mx-auto" onerror="this.style.display='none'">
         </div>
         
-        <h1 class="text-6xl md:text-9xl font-black gold-shine mb-6 tracking-tighter">AGA HOUSE</h1>
-        <h2 class="text-2xl md:text-4xl font-bold mb-8 text-white uppercase tracking-widest">Sell Your Property Professionally</h2>
+        <h1 class="text-6xl md:text-9xl font-black gold-shine mb-6 tracking-tighter uppercase">AGA HOUSE</h1>
+        <h2 class="text-2xl md:text-4xl font-bold mb-8 text-white">بيع عقارك باحترافية مطلقة</h2>
         
         <p class="text-gray-400 text-lg md:text-xl max-w-2xl mb-12 leading-relaxed">
-            We handle the hard work for you. With our extensive network and expertise in luxury real estate marketing, we guarantee to sell your property at the best price.
+            نحن نتولى المهمة الصعبة بدلاً عنك. من خلال شبكتنا الواسعة وخبرتنا في تسويق العقارات الفاخرة، نضمن لك بيع عقارك بأفضل سعر ممكن.
         </p>
 
-        <div class="flex flex-col md:flex-row gap-6">
-            <a href="https://wa.me/212639506866?text=Hello%20AGA%20HOUSE,%20I%20want%20to%20sell%20my%20property" class="bg-[#d4af37] text-black px-12 py-5 rounded-full font-black text-xl hover:scale-105 transition-all shadow-[0_0_30px_rgba(212,175,55,0.3)]">
-                <i class="fab fa-whatsapp mr-2"></i> CONTACT US TO SELL
+        <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+            <a href="https://wa.me/212639506866" class="bg-[#d4af37] text-black px-10 py-4 rounded-full font-black text-lg hover:scale-105 transition-all w-full md:w-auto">
+                <i class="fab fa-whatsapp ml-2"></i> تواصل معنا للبيع
             </a>
-            <a href="https://web.facebook.com/profile.php?id=61584878821986" target="_blank" class="border-2 border-[#d4af37] text-[#d4af37] px-12 py-5 rounded-full font-bold text-xl hover:bg-[#d4af37] hover:text-black transition-all">
-                <i class="fab fa-facebook-f mr-2"></i> FACEBOOK PAGE
+            <a href="https://web.facebook.com/profile.php?id=61584878821986" target="_blank" class="border border-[#d4af37] text-[#d4af37] px-10 py-4 rounded-full font-bold text-lg hover:bg-[#d4af37] hover:text-black transition-all w-full md:w-auto">
+                <i class="fab fa-facebook-f ml-2"></i> صفحة فيسبوك
+            </a>
+            <a href="https://www.instagram.com/aga_houses/" target="_blank" class="border border-[#d4af37] text-[#d4af37] px-10 py-4 rounded-full font-bold text-lg hover:bg-[#d4af37] hover:text-black transition-all w-full md:w-auto">
+                <i class="fab fa-instagram ml-2"></i> إنستغرام
             </a>
         </div>
     </section>
@@ -74,33 +76,29 @@
         <div class="grid md:grid-cols-3 gap-8">
             <div class="lux-card p-10 rounded-3xl text-center">
                 <i class="fas fa-bullhorn text-4xl text-[#d4af37] mb-6"></i>
-                <h3 class="text-xl font-bold mb-4">Professional Marketing</h3>
-                <p class="text-gray-500">We showcase your property using the latest technology to target the right buyers.</p>
+                <h3 class="text-xl font-bold mb-4 text-[#d4af37]">تسويق احترافي</h3>
+                <p class="text-gray-400">نعرض عقارك باستخدام أحدث التقنيات لاستهداف المشترين المناسبين بدقة.</p>
             </div>
             <div class="lux-card p-10 rounded-3xl text-center">
                 <i class="fas fa-handshake text-4xl text-[#d4af37] mb-6"></i>
-                <h3 class="text-xl font-bold mb-4">Trust & Credibility</h3>
-                <p class="text-gray-500">Full legal and administrative support from the first meeting to the final contract.</p>
+                <h3 class="text-xl font-bold mb-4 text-[#d4af37]">ثقة ومصداقية</h3>
+                <p class="text-gray-400">دعم قانوني وإداري كامل من أول لقاء حتى توقيع العقد النهائي.</p>
             </div>
             <div class="lux-card p-10 rounded-3xl text-center">
                 <i class="fas fa-bolt text-4xl text-[#d4af37] mb-6"></i>
-                <h3 class="text-xl font-bold mb-4">Fast Execution</h3>
-                <p class="text-gray-500">Our wide client network ensures finding the perfect buyer in record time.</p>
+                <h3 class="text-xl font-bold mb-4 text-[#d4af37]">سرعة التنفيذ</h3>
+                <p class="text-gray-400">شبكة عملائنا الواسعة تضمن العثور على المشتري المثالي في وقت قياسي.</p>
             </div>
         </div>
     </section>
 
     <footer class="py-10 text-center border-t border-gray-900">
-        <div class="flex justify-center gap-10 mb-6">
-            <a href="https://www.instagram.com/aga_houses/" target="_blank" class="text-gray-500 hover:text-[#d4af37] text-2xl"><i class="fab fa-instagram"></i></a>
-            <a href="https://web.facebook.com/profile.php?id=61584878821986" target="_blank" class="text-gray-500 hover:text-[#d4af37] text-2xl"><i class="fab fa-facebook-f"></i></a>
-        </div>
-        <p class="text-gray-700 text-xs tracking-widest uppercase">&copy; 2026 AGA HOUSE - Luxury Estate Marketing</p>
+        <p class="text-gray-600 text-sm tracking-widest uppercase">&copy; 2026 AGA HOUSE - LUXURY REAL ESTATE</p>
     </footer>
 
     <script>
         const container = document.getElementById('stars-container');
-        for (let i = 0; i < 120; i++) {
+        for (let i = 0; i < 150; i++) {
             const star = document.createElement('div');
             star.className = 'star';
             const size = Math.random() * 2 + 'px';
