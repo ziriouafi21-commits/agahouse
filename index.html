@@ -1,215 +1,76 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="fr" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AGA HOUSE | Professional Real Estate Marketing</title>
-    
+    <title>AGA HOUSE - Immobilier de Luxe Agadir</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { background: #05070a; font-family: 'Cairo', sans-serif; color: white; margin: 0; overflow-x: hidden; scroll-behavior: smooth; }
-
-        /* Animation Classes */
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-
-        /* Hero Split Configuration */
-        .hero-container { position: relative; width: 100%; height: 100vh; overflow: hidden; }
-
-        /* Top Right: AGA NORMAL (Balcony/Modern View) */
-        .side-normal {
-            position: absolute; inset: 0;
-            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('Firefly_Gemini Flash.png');
-            background-size: cover; background-position: center;
-            z-index: 5;
-            display: flex; align-items: flex-start; justify-content: flex-end; padding: 6% 8% 0 0;
-        }
-
-        /* Bottom Left: AGA LUX (Space/Luxury Stars) */
-        .side-lux {
-            position: absolute; inset: 0;
-            background: radial-gradient(circle at center, #0d1424 0%, #05070a 100%);
-            z-index: 10;
-            clip-path: url(#wave-clip); 
-            display: flex; align-items: flex-end; padding: 0 0 8% 8%;
-        }
-
-        .star { position: absolute; background: white; border-radius: 50%; opacity: 0.3; animation: twinkle 3s infinite; }
-        @keyframes twinkle { 0%, 100% { opacity: 0.2; } 50% { opacity: 0.8; } }
-
-        /* Branding Overlay */
-        .brand-overlay {
-            position: absolute; inset: 0; display: flex; flex-direction: column; 
-            align-items: center; justify-content: center; z-index: 50; pointer-events: none;
-        }
-
-        .gold-shine {
-            background: linear-gradient(45deg, #DAA520, #F4D03F, #DAA520);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            background-clip: text; animation: shine 4s linear infinite; background-size: 200% auto;
-        }
-        @keyframes shine { to { background-position: 200% center; } }
-
-        /* Social Icons Hover Styling */
-        .fb-hover:hover { background-color: #1877f2 !important; border-color: #1877f2 !important; transform: translateY(-5px); }
-        .ig-hover:hover { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888) !important; border-color: transparent !important; transform: translateY(-5px); }
-
-        /* Flip Cards Styling */
-        .flip-card { height: 400px; perspective: 1000px; width: 100%; }
-        .flip-card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.8s; transform-style: preserve-3d; cursor: pointer; }
-        .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
-        .flip-card-front, .flip-card-back {
-            position: absolute; width: 100%; height: 100%; backface-visibility: hidden;
-            border-radius: 2.5rem; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem;
-            border: 1px solid rgba(212, 175, 55, 0.1);
-        }
-        .flip-card-front { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(12px); }
-        .flip-card-back { background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, #05070a 100%); transform: rotateY(180deg); border-color: rgba(212, 175, 55, 0.4); }
-
-        .float-wts { position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.3); transition: 0.3s; }
-        .float-wts:hover { transform: scale(1.1) rotate(10deg); }
+        body { font-family: 'Inter', sans-serif; }
+        .font-serif { font-family: 'Playfair Display', serif; }
     </style>
 </head>
-<body>
+<body class="bg-white text-gray-900">
 
-    <a href="https://wa.me/212639506866" class="float-wts" target="_blank"><i class="fab fa-whatsapp text-white"></i></a>
-
-    <header class="hero-container">
-        
-        <div class="side-normal">
-            <div class="text-right reveal active">
-                <span class="text-white/70 tracking-[0.2em] font-bold text-xs uppercase block mb-1">Agadir Essentials</span>
-                <h2 class="text-5xl md:text-7xl font-black text-white italic leading-none uppercase">AGA NORMAL</h2>
-                <p class="text-white/90 mt-3 font-bold tracking-widest text-sm uppercase">Appartements & Maisons Modernes</p>
-            </div>
+    <nav class="py-6 px-10 flex justify-between items-center border-b border-gray-100">
+        <div class="text-2xl font-serif font-bold tracking-tighter text-emerald-900">AGA HOUSE</div>
+        <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest font-semibold">
+            <a href="#" class="hover:text-emerald-700 transition">Accueil</a>
+            <a href="#" class="hover:text-emerald-700 transition">Services</a>
+            <a href="#" class="hover:text-emerald-700 transition">Contact</a>
         </div>
+        <a href="https://wa.me/YOUR_NUMBER" class="bg-emerald-800 text-white px-6 py-2 text-xs uppercase font-bold tracking-widest">WhatsApp</a>
+    </nav>
 
-        <div class="side-lux">
-            <div id="stars-container" class="absolute inset-0 pointer-events-none"></div>
-            <div class="text-left reveal active">
-                <span class="text-[#d4af37] tracking-[0.2em] font-bold text-xs uppercase block mb-1">Agadir Prestige</span>
-                <h2 class="text-5xl md:text-7xl font-black text-white italic leading-none uppercase">AGA LUX</h2>
-                <p class="text-[#d4af37] mt-3 font-bold tracking-widest text-sm uppercase">Villas & Qsor de Haute Couture</p>
-            </div>
-        </div>
-
-        <div class="brand-overlay">
-            <p class="text-[10px] tracking-[0.5em] text-[#d4af37] uppercase font-bold mb-4 reveal active">Real Estate Marketing</p>
-            <h1 class="text-7xl md:text-9xl font-black gold-shine tracking-tighter leading-none reveal active">AGA HOUSE</h1>
-            <h2 class="text-lg md:text-xl font-light text-gray-300 mt-5 tracking-[0.2em] uppercase reveal active">الفخامة في تسويق عقارك</h2>
-            
-            <div class="mt-10 flex gap-6 pointer-events-auto reveal active">
-                <a href="https://web.facebook.com/profile.php?id=61584878821986" target="_blank" class="fb-hover w-14 h-14 border border-white/10 rounded-full flex items-center justify-center transition-all">
-                    <i class="fab fa-facebook-f text-white/70 text-xl"></i>
-                </a>
-                <a href="https://www.instagram.com/aga_houses/" target="_blank" class="ig-hover w-14 h-14 border border-white/10 rounded-full flex items-center justify-center transition-all">
-                    <i class="fab fa-instagram text-white/70 text-xl"></i>
-                </a>
-            </div>
+    <header class="relative h-[70vh] flex items-center justify-center bg-emerald-900 overflow-hidden">
+        <div class="absolute inset-0 opacity-40 bg-[url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80')] bg-cover bg-center"></div>
+        <div class="relative z-10 text-center text-white px-4">
+            <h1 class="text-5xl md:text-7xl font-serif mb-6 uppercase tracking-tight">Vendez votre bien avec élégance</h1>
+            <p class="text-xl md:text-2xl font-light max-w-2xl mx-auto mb-10 text-emerald-50">L'agence immobilière de référence pour le luxe à Agadir.</p>
+            <a href="#offres" class="border-2 border-white px-10 py-4 text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-emerald-900 transition">Découvrir nos services</a>
         </div>
     </header>
 
-    <svg width="0" height="0" style="position: absolute;">
-        <defs>
-            <clipPath id="wave-clip" clipPathUnits="objectBoundingBox">
-                <path d="M0,1 L0,0.2 C0.2,0.5 0.3,0.1 0.5,0.4 C0.7,0.7 0.8,0.3 1,0.6 L1,1 Z"></path>
-            </clipPath>
-        </defs>
-    </svg>
-
-    <section id="services" class="py-32 px-6 max-w-7xl mx-auto grid md:grid-cols-3 gap-10">
-        
-        <div class="flip-card reveal">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <div class="w-20 h-20 bg-[#d4af37]/10 rounded-2xl flex items-center justify-center mb-6 border border-[#d4af37]/30">
-                        <i class="fas fa-camera-retro text-[#d4af37] text-3xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">تصوير احترافي</h3>
-                    <p class="text-gray-400 text-sm text-center">إبراز أدق تفاصيل ومميزات عقارك لجذب المشتري المثالي.</p>
-                </div>
-                <div class="flip-card-back text-right p-8">
-                    <h3 class="text-[#d4af37] text-xl font-bold mb-6">مزايا التصوير</h3>
-                    <ul class="text-gray-300 text-sm space-y-4">
-                        <li><i class="fas fa-magic text-[#d4af37] ml-2"></i> تعديل ألوان سينمائي مريح.</li>
-                        <li><i class="fas fa-video text-[#d4af37] ml-2"></i> فيديوهات 4K عالية الجودة.</li>
-                        <li><i class="fas fa-expand text-[#d4af37] ml-2"></i> زوايا تبرز الجمالية.</li>
-                    </ul>
+    <section id="offres" class="py-24 bg-white overflow-hidden">
+        <div class="container mx-auto px-6">
+            
+            <div class="flex flex-col items-end mb-32 group">
+                <div class="max-w-2xl text-right">
+                    <span class="text-emerald-700 font-bold uppercase tracking-[0.3em] text-xs mb-4 block">Service 01</span>
+                    <h2 class="text-4xl md:text-6xl font-serif text-emerald-900 mb-8 uppercase leading-tight tracking-tighter">Estimation & <br/>Expertise Gratuite</h2>
+                    <p class="text-xl text-gray-600 leading-relaxed mb-10 font-light italic">Nous réalisons une étude de marché approfondie à Agadir pour déterminer la valeur réelle de votre bien.</p>
+                    <a href="https://wa.me/YOUR_NUMBER" class="inline-block bg-emerald-800 text-white px-12 py-5 rounded-sm shadow-2xl hover:bg-emerald-900 transition-all tracking-widest uppercase text-sm font-bold">Demander mon estimation</a>
                 </div>
             </div>
-        </div>
 
-        <div class="flip-card reveal">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <div class="w-20 h-20 bg-[#d4af37]/10 rounded-2xl flex items-center justify-center mb-6 border border-[#d4af37]/30">
-                        <i class="fas fa-bullhorn text-[#d4af37] text-3xl"></i>
+            <div class="w-32 h-px bg-emerald-100 mx-auto my-12"></div>
+
+            <div class="flex flex-col items-start group">
+                <div class="max-w-2xl text-left">
+                    <span class="text-emerald-700 font-bold uppercase tracking-[0.3em] text-xs mb-4 block">Service 02</span>
+                    <h2 class="text-4xl md:text-6xl font-serif text-emerald-900 mb-8 uppercase leading-tight tracking-tighter">Pack Marketing <br/>Standard</h2>
+                    <p class="text-xl text-gray-600 leading-relaxed mb-10 font-light">Donnez à votre propriété l'exposition qu'elle mérite sur nos réseaux sociaux auprès d'une audience qualifiée à Agadir.</p>
+                    <div class="flex flex-wrap gap-3 mb-10">
+                        <span class="bg-emerald-50 text-emerald-800 px-4 py-1 text-xs font-bold uppercase tracking-widest border border-emerald-100 italic">Photos HD ✓</span>
+                        <span class="bg-emerald-50 text-emerald-800 px-4 py-1 text-xs font-bold uppercase tracking-widest border border-emerald-100 italic">Targeting Facebook ✓</span>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">تسويق شخصي</h3>
-                    <p class="text-gray-400 text-sm text-center">استراتيجيات حديثة لعرض عقارك عبر شرح واقعي ومفصل.</p>
-                </div>
-                <div class="flip-card-back text-right p-8">
-                    <h3 class="text-[#d4af37] text-xl font-bold mb-6">خطتنا التسويقية</h3>
-                    <ul class="text-gray-300 text-sm space-y-4">
-                        <li><i class="fas fa-microphone text-[#d4af37] ml-2"></i> تقديم صوتي مباشر.</li>
-                        <li><i class="fas fa-rocket text-[#d4af37] ml-2"></i> إعلانات ممولة مستهدفة.</li>
-                        <li><i class="fas fa-users text-[#d4af37] ml-2"></i> وصول مباشر للمشترين.</li>
-                    </ul>
+                    <a href="https://wa.me/YOUR_NUMBER" class="inline-block border-2 border-emerald-800 text-emerald-800 px-12 py-5 rounded-sm font-bold hover:bg-emerald-800 hover:text-white transition-all tracking-widest uppercase text-sm">Nous confier votre bien</a>
                 </div>
             </div>
-        </div>
 
-        <div class="flip-card reveal">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <div class="w-20 h-20 bg-[#d4af37]/10 rounded-2xl flex items-center justify-center mb-6 border border-[#d4af37]/30">
-                        <i class="fas fa-shield-alt text-[#d4af37] text-3xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">مواكبة قانونية</h3>
-                    <p class="text-gray-400 text-sm text-center">مرافقة شاملة تضمن حقوقك من أول استشارة حتى التوقيع.</p>
-                </div>
-                <div class="flip-card-back text-right p-8">
-                    <h3 class="text-[#d4af37] text-xl font-bold mb-6">الضمانات</h3>
-                    <ul class="text-gray-300 text-sm space-y-4">
-                        <li><i class="fas fa-file-contract text-[#d4af37] ml-2"></i> فحص دقيق للوثائق.</li>
-                        <li><i class="fas fa-user-tie text-[#d4af37] ml-2"></i> تنسيق مباشر مع الموثق.</li>
-                        <li><i class="fas fa-check-circle text-[#d4af37] ml-2"></i> تأمين حقوق الطرفين.</li>
-                    </ul>
-                </div>
-            </div>
         </div>
     </section>
 
-    <footer class="py-20 text-center bg-black/80 backdrop-blur-lg border-t border-white/5">
-        <h2 class="gold-shine font-black text-4xl mb-6 tracking-widest uppercase italic">AGA HOUSE</h2>
-        <div dir="ltr" class="text-[#d4af37] text-2xl font-bold mb-4 tracking-widest">+212 639-506866</div>
-        <p class="text-gray-700 text-[9px] uppercase tracking-[0.4em]">© 2026 AGA HOUSE . ALL RIGHTS RESERVED</p>
+    <footer class="bg-emerald-950 py-16 text-emerald-100 text-center">
+        <div class="text-3xl font-serif mb-6 uppercase">AGA HOUSE</div>
+        <p class="mb-8 opacity-60 text-sm">Immobilier de prestige à Agadir, Maroc.</p>
+        <div class="flex justify-center space-x-6">
+            <a href="#" class="hover:text-white transition">Instagram</a>
+            <a href="#" class="hover:text-white transition">Facebook</a>
+            <a href="#" class="hover:text-white transition">WhatsApp</a>
+        </div>
     </footer>
 
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-        const starsContainer = document.getElementById('stars-container');
-        for (let i = 0; i < 80; i++) {
-            const star = document.createElement('div');
-            star.className = 'star';
-            const size = Math.random() * 2 + 0.5;
-            star.style.width = star.style.height = size + 'px';
-            star.style.left = Math.random() * 100 + '%';
-            star.style.top = Math.random() * 100 + '%';
-            starsContainer.appendChild(star);
-        }
-    </script>
 </body>
 </html>
