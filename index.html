@@ -11,19 +11,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap" rel="stylesheet">
     
     <style>
-        * { cursor: none !important; } /* Hidden for custom cursor */
-        body { background: #05070a; font-family: 'Cairo', sans-serif; color: white; margin: 0; overflow-x: hidden; scroll-behavior: smooth; }
+        body { 
+            background: #05070a; 
+            font-family: 'Cairo', sans-serif; 
+            color: white; 
+            margin: 0; 
+            overflow-x: hidden; 
+            scroll-behavior: smooth;
+        }
 
-        /* Custom Golden Cursor */
-        #cursor { width: 20px; height: 20px; border: 2px solid #d4af37; border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transition: transform 0.1s ease; }
-        #cursor-blur { width: 200px; height: 200px; background: rgba(212, 175, 55, 0.05); filter: blur(50px); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9998; }
+        /* Aura around cursor (Doesn't hide the real mouse) */
+        #cursor-aura {
+            width: 150px; height: 150px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+            position: fixed; pointer-events: none; z-index: 9999;
+            transform: translate(-50%, -50%); transition: 0.1s ease-out;
+        }
 
-        /* Animated Stars Background */
-        #particles-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; background: radial-gradient(circle at center, #0d1424 0%, #05070a 100%); }
+        #particles-container { 
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+            z-index: 1; pointer-events: none; 
+        }
         .star { position: absolute; background: white; border-radius: 50%; opacity: 0.3; animation: twinkleGlow var(--duration) infinite ease-in-out; }
-        @keyframes twinkleGlow { 0%, 100% { opacity: 0.2; transform: scale(1); } 50% { opacity: 0.8; transform: scale(1.3); } }
+        @keyframes twinkleGlow { 0%, 100% { opacity: 0.2; } 50% { opacity: 0.8; } }
 
-        /* Luxury Typography */
+        .content-wrapper { position: relative; z-index: 10; }
+
         .gold-shine {
             background: linear-gradient(45deg, #d4af37, #f7dc6f, #f1c40f, #d4af37);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
@@ -31,78 +44,73 @@
         }
         @keyframes shine { to { background-position: 200% center; } }
 
-        /* Flip Cards Style */
+        /* Flip Cards */
         .flip-card { height: 380px; perspective: 1000px; }
-        .flip-card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1); transform-style: preserve-3d; }
+        .flip-card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.8s; transform-style: preserve-3d; }
         .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
-        .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: 2rem; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; border: 1px solid rgba(212, 175, 55, 0.15); }
-        .flip-card-front { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); }
-        .flip-card-back { background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), #05070a); transform: rotateY(180deg); backdrop-filter: blur(20px); border-color: #d4af37; }
+        .flip-card-front, .flip-card-back { 
+            position: absolute; width: 100%; height: 100%; 
+            backface-visibility: hidden; border-radius: 2rem; 
+            display: flex; flex-direction: column; align-items: center; 
+            justify-content: center; padding: 2rem; border: 1px solid rgba(212, 175, 55, 0.2); 
+        }
+        .flip-card-front { background: rgba(10, 15, 25, 0.8); backdrop-filter: blur(10px); }
+        .flip-card-back { background: #d4af37; color: #000; transform: rotateY(180deg); }
 
-        /* Process Steps Timeline */
-        .step-line { position: absolute; top: 50%; left: 0; width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent); z-index: -1; }
-        .step-circle { width: 50px; height: 50px; background: #05070a; border: 2px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; box-shadow: 0 0 15px rgba(212, 175, 55, 0.3); }
-
-        /* Floating WhatsApp */
-        .float-wts { position: fixed; bottom: 30px; left: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; z-index: 1000; transition: 0.3s; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2); }
-        .float-wts:hover { transform: scale(1.15) rotate(10deg); }
+        .float-wts { 
+            position: fixed; bottom: 30px; left: 30px; background: #25d366; 
+            color: white; width: 60px; height: 60px; border-radius: 50%; 
+            display: flex; align-items: center; justify-content: center; 
+            font-size: 28px; z-index: 100; transition: 0.3s; 
+        }
     </style>
 </head>
 
 <body>
-    <div id="cursor"></div>
-    <div id="cursor-blur"></div>
+    <div id="cursor-aura"></div>
     <div id="particles-container"></div>
 
-    <a href="https://wa.me/212639506866" class="float-wts" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <div class="content-wrapper">
+        <a href="https://wa.me/212639506866" class="float-wts" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
-    <header class="h-screen flex flex-col items-center justify-center text-center px-6">
-        <div class="reveal opacity-60 tracking-[0.5em] text-[#d4af37] text-[10px] font-bold uppercase mb-4 italic">Agadir Luxury Portfolio</div>
-        <h1 class="reveal text-7xl md:text-[10rem] font-black gold-shine tracking-tighter leading-none mb-6">AGA HOUSE</h1>
-        <p class="reveal text-lg md:text-2xl font-light text-gray-400 tracking-[0.3em] mb-12 uppercase">الفن في عرض العقار</p>
-        
-        <div class="reveal flex flex-col md:flex-row gap-8">
-            <a href="https://wa.me/212639506866" class="bg-gradient-to-r from-[#d4af37] to-[#f4d03f] text-black px-14 py-4 rounded-full font-black text-xl hover:scale-105 transition-all shadow-2xl">تواصل معنا للبيع</a>
-            <div class="flex gap-4 items-center">
-                <a href="https://web.facebook.com/profile.php?id=61584878821986" target="_blank" class="w-12 h-12 border border-white/10 rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/aga_houses/" target="_blank" class="w-12 h-12 border border-white/10 rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all"><i class="fab fa-instagram"></i></a>
+        <header class="h-screen flex flex-col items-center justify-center text-center px-6">
+            <h1 class="reveal text-7xl md:text-9xl font-black gold-shine mb-4">AGA HOUSE</h1>
+            <p class="reveal text-xl text-gray-400 uppercase tracking-widest">التسويق العقاري بمعايير عالمية</p>
+            <div class="reveal mt-10 flex gap-4">
+                <a href="https://wa.me/212639506866" class="bg-[#d4af37] text-black px-10 py-4 rounded-full font-bold hover:scale-105 transition">تواصل معنا للبيع</a>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <section class="py-32 px-6 max-w-7xl mx-auto">
-        <div class="grid md:grid-cols-3 gap-10">
+        <section class="py-20 px-6 max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
             <div class="flip-card reveal">
-                <div class="flip-card-inner text-right">
+                <div class="flip-card-inner">
                     <div class="flip-card-front">
-                        <div class="mb-6"><i class="fas fa-camera-retro text-4xl text-[#d4af37]"></i></div>
-                        <h3 class="text-2xl font-bold mb-4">إنتاج بصري</h3>
-                        <p class="text-gray-400 text-sm">إظهار عقارك بلمسة سينمائية تبرز أدق التفاصيل الجمالية.</p>
+                        <i class="fas fa-camera-retro text-4xl text-[#d4af37] mb-4"></i>
+                        <h3 class="text-xl font-bold">إنتاج بصري</h3>
                     </div>
-                    <div class="flip-card-back">
-                        <h3 class="text-[#d4af37] text-xl font-bold mb-6">ماذا نضمن لك؟</h3>
-                        <ul class="text-gray-300 space-y-4 text-sm">
-                            <li><i class="fas fa-check-circle ml-2 text-[#d4af37]"></i> تعديل ألوان سينمائي (Color Grading).</li>
-                            <li><i class="fas fa-check-circle ml-2 text-[#d4af37]"></i> إضاءة مدروسة وزوايا واسعة.</li>
-                            <li><i class="fas fa-check-circle ml-2 text-[#d4af37]"></i> مونتاج احترافي يجذب الانتباه.</li>
+                    <div class="flip-card-back text-right">
+                        <p class="font-bold mb-2">خدماتنا:</p>
+                        <ul class="text-sm space-y-2">
+                            <li>• تعديل ألوان سينمائي</li>
+                            <li>• زوايا واسعة واحترافية</li>
+                            <li>• مونتاج عالي الجودة</li>
                         </ul>
                     </div>
                 </div>
             </div>
-
+            
             <div class="flip-card reveal" style="transition-delay: 0.2s">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
-                        <div class="mb-6"><i class="fas fa-bullhorn text-4xl text-[#d4af37]"></i></div>
-                        <h3 class="text-2xl font-bold mb-4">تسويق استراتيجي</h3>
-                        <p class="text-gray-400 text-sm">نحن لا نعلن فقط، بل نروي قصة عقارك لجذب المستثمر الحقيقي.</p>
+                        <i class="fas fa-bullhorn text-4xl text-[#d4af37] mb-4"></i>
+                        <h3 class="text-xl font-bold">تسويق استراتيجي</h3>
                     </div>
-                    <div class="flip-card-back">
-                        <h3 class="text-[#d4af37] text-xl font-bold mb-6">خطة العمل</h3>
-                        <ul class="text-gray-300 space-y-4 text-sm">
-                            <li><i class="fas fa-check-circle ml-2 text-[#d4af37]"></i> شرح مفصل بالفيديو لجميع المميزات.</li>
-                            <li><i class="fas fa-check-circle ml-2 text-[#d4af37]"></i> إعلانات موجهة للمهتمين بالشراء فعلاً.</li>
-                            <li><i class="fas fa-check-circle ml-2 text-[#d4af37]"></i> بناء الثقة عبر تقديم محتوى واقعي.</li>
+                    <div class="flip-card-back text-right">
+                        <p class="font-bold mb-2">خطة العمل:</p>
+                        <ul class="text-sm space-y-2">
+                            <li>• شرح مفصل بالفيديو</li>
+                            <li>• استهداف دقيق للمشترين</li>
+                            <li>• حملات إعلانية ممولة</li>
                         </ul>
                     </div>
                 </div>
@@ -111,9 +119,66 @@
             <div class="flip-card reveal" style="transition-delay: 0.4s">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
-                        <div class="mb-6"><i class="fas fa-shield-alt text-4xl text-[#d4af37]"></i></div>
-                        <h3 class="text-2xl font-bold mb-4">أمان ومصداقية</h3>
-                        <p class="text-gray-400 text-sm">مرافقة مهنية تضمن حقوقك القانونية في كل مراحل البيع.</p>
+                        <i class="fas fa-shield-alt text-4xl text-[#d4af37] mb-4"></i>
+                        <h3 class="text-xl font-bold">مواكبة قانونية</h3>
                     </div>
-                    <div class="flip-card-back">
-                        <h3 class="text-[#d4af37] text-xl font-bold mb-6">
+                    <div class="flip-card-back text-right">
+                        <p class="font-bold mb-2">الضمانات:</p>
+                        <ul class="text-sm space-y-2">
+                            <li>• تدقيق شامل للوثائق</li>
+                            <li>• تنسيق مع الموثق</li>
+                            <li>• حماية حقوق البائع</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 px-6 max-w-7xl mx-auto text-center">
+            <h2 class="reveal text-3xl font-bold mb-10 gold-shine">مقرنا في أكادير</h2>
+            <div class="reveal rounded-3xl overflow-hidden border border-[#d4af37]/30 h-80 shadow-2xl">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55021.78248834925!2d-9.6105748!3d30.4220365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdb3b6e94144391b%3A0x22442308e84323e2!2sAgadir!5e0!3m2!1sen!2sma!4v1710000000000!5m2!1sen!2sma" 
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </section>
+
+        <footer class="py-20 border-t border-white/10 bg-black/60 text-center">
+            <h2 class="gold-shine text-4xl font-black mb-4 tracking-tighter">AGA HOUSE</h2>
+            <div dir="ltr" class="text-[#d4af37] text-2xl font-bold mb-6">+212 639-506866</div>
+            <div class="flex justify-center gap-6 mb-10">
+                <a href="https://web.facebook.com/profile.php?id=61584878821986" target="_blank" class="hover:text-[#d4af37] transition text-xl"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/aga_houses/" target="_blank" class="hover:text-[#d4af37] transition text-xl"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p class="text-gray-600 text-[10px] tracking-[0.3em]">© 2026 AGA HOUSE . AGADIR MOROCCO</p>
+        </footer>
+    </div>
+
+    <script>
+        // Cursor Aura Logic
+        const aura = document.getElementById('cursor-aura');
+        document.addEventListener('mousemove', (e) => {
+            aura.style.left = e.clientX + 'px';
+            aura.style.top = e.clientY + 'px';
+        });
+
+        // Stars Logic
+        const container = document.getElementById('particles-container');
+        for (let i = 0; i < 60; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            const size = Math.random() * 2 + 0.5;
+            star.style.width = size + 'px'; star.style.height = size + 'px';
+            star.style.left = Math.random() * 100 + '%'; star.style.top = Math.random() * 100 + '%';
+            star.style.setProperty('--duration', (Math.random() * 3 + 2) + 's');
+            container.appendChild(star);
+        }
+
+        // Animations
+        ScrollReveal().reveal('.reveal', {
+            delay: 150, distance: '30px', origin: 'bottom', duration: 800, opacity: 0
+        });
+    </script>
+</body>
+</html>
