@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AGA HOUSE | Luxury Real Estate Marketing</title>
+    <title>AGA HOUSE | Agadir Real Estate</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -17,22 +17,24 @@
         .reveal.active { opacity: 1; transform: translateY(0); }
 
         /* Split Hero Configuration */
-        .hero-container { position: relative; width: 100%; height: 100vh; overflow: hidden; display: flex; }
+        .hero-container { position: relative; width: 100%; height: 100vh; overflow: hidden; }
 
-        .side-lux {
-            position: absolute; left: 0; top: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at center, #0d1424 0%, #05070a 100%);
-            z-index: 10;
-            clip-path: polygon(0 0, 100% 0, 0 100%); /* Diagonal */
-            display: flex; align-items: center; padding-left: 8%;
-        }
-
+        /* Top Side: NORMAL (Balcony Image) */
         .side-normal {
-            position: absolute; right: 0; top: 0; width: 100%; height: 100%;
-            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('Firefly_Gemini Flash.png'); /* */
+            position: absolute; inset: 0;
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('Firefly_Gemini Flash.png');
             background-size: cover; background-position: center;
             z-index: 5;
-            display: flex; align-items: center; justify-content: flex-end; padding-right: 8%;
+            display: flex; align-items: flex-start; justify-content: flex-end; padding: 5% 8% 0 0;
+        }
+
+        /* Bottom Side: LUX (Stars) */
+        .side-lux {
+            position: absolute; inset: 0;
+            background: radial-gradient(circle at center, #0d1424 0%, #05070a 100%);
+            z-index: 10;
+            clip-path: url(#wave-clip); 
+            display: flex; align-items: flex-end; padding: 0 0 5% 8%;
         }
 
         .star { position: absolute; background: white; border-radius: 50%; opacity: 0.3; animation: twinkle 3s infinite; }
@@ -51,11 +53,11 @@
         }
         @keyframes shine { to { background-position: 200% center; } }
 
-        /* Social Icons */
+        /* Social Icons Branding */
         .fb-hover:hover { background-color: #1877f2 !important; border-color: #1877f2 !important; transform: translateY(-5px); }
         .ig-hover:hover { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888) !important; border-color: transparent !important; transform: translateY(-5px); }
 
-        /* Flip Cards */
+        /* Flip Cards Section */
         .flip-card { height: 380px; perspective: 1000px; width: 100%; }
         .flip-card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.8s; transform-style: preserve-3d; cursor: pointer; }
         .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
@@ -76,29 +78,30 @@
     <a href="https://wa.me/212639506866" class="float-wts" target="_blank"><i class="fab fa-whatsapp text-white"></i></a>
 
     <header class="hero-container">
-        <div class="side-lux">
-            <div id="stars-container" class="absolute inset-0 pointer-events-none"></div>
-            <div class="relative z-20 reveal">
-                <span class="text-[#d4af37] tracking-[0.3em] font-bold text-xs uppercase block mb-2">Agadir Premium</span>
-                <h2 class="text-5xl md:text-6xl font-black text-white italic leading-tight">AGA LUX</h2>
-                <a href="#services" class="mt-6 inline-block border-2 border-[#d4af37] text-[#d4af37] px-8 py-3 rounded-full hover:bg-[#d4af37] hover:text-black transition-all font-bold text-xs">VILLAS & QSOR</a>
-            </div>
-        </div>
-
+        
         <div class="side-normal">
-            <div class="relative z-20 text-right reveal">
+            <div class="relative z-20 text-right reveal active">
                 <span class="text-white/80 tracking-[0.3em] font-bold text-xs uppercase block mb-2">Agadir Essentials</span>
-                <h2 class="text-5xl md:text-6xl font-black text-white italic leading-tight">AGA NORMAL</h2>
+                <h2 class="text-5xl md:text-6xl font-black text-white italic leading-tight uppercase">AGA<br>NORMAL</h2>
                 <a href="#services" class="mt-6 inline-block bg-white text-blue-900 px-8 py-3 rounded-full font-bold hover:bg-gray-200 transition-all text-xs">APPARTEMENTS</a>
             </div>
         </div>
 
+        <div class="side-lux">
+            <div id="stars-container" class="absolute inset-0 pointer-events-none"></div>
+            <div class="relative z-20 text-left reveal active">
+                <span class="text-[#d4af37] tracking-[0.3em] font-bold text-xs uppercase block mb-2">Agadir Premium</span>
+                <h2 class="text-5xl md:text-6xl font-black text-white italic leading-tight uppercase">AGA<br>LUX</h2>
+                <a href="#services" class="mt-6 inline-block border-2 border-[#d4af37] text-[#d4af37] px-8 py-3 rounded-full hover:bg-[#d4af37] hover:text-black transition-all font-bold text-xs">VILLAS & QSOR</a>
+            </div>
+        </div>
+
         <div class="brand-overlay">
-            <p class="text-[10px] tracking-[0.5em] text-[#d4af37] uppercase font-bold mb-4 reveal">Real Estate Marketing</p>
-            <h1 class="text-7xl md:text-9xl font-black gold-shine tracking-tighter leading-none reveal">AGA HOUSE</h1>
-            <h2 class="text-lg md:text-xl font-light text-gray-300 mt-4 tracking-[0.2em] uppercase reveal">الفخامة في تسويق عقارك</h2>
+            <p class="text-[10px] tracking-[0.5em] text-[#d4af37] uppercase font-bold mb-4 reveal active">Real Estate Marketing</p>
+            <h1 class="text-7xl md:text-9xl font-black gold-shine tracking-tighter leading-none reveal active">AGA HOUSE</h1>
+            <h2 class="text-lg md:text-xl font-light text-gray-300 mt-4 tracking-[0.2em] uppercase reveal active">الفخامة في تسويق عقارك</h2>
             
-            <div class="mt-10 flex gap-6 pointer-events-auto reveal">
+            <div class="mt-10 flex gap-6 pointer-events-auto reveal active">
                 <a href="https://web.facebook.com/profile.php?id=61584878821986" target="_blank" class="fb-hover w-14 h-14 border border-white/10 rounded-full flex items-center justify-center transition-all">
                     <i class="fab fa-facebook-f text-white/70"></i>
                 </a>
@@ -108,6 +111,14 @@
             </div>
         </div>
     </header>
+
+    <svg width="0" height="0" style="position: absolute;">
+        <defs>
+            <clipPath id="wave-clip" clipPathUnits="objectBoundingBox">
+                <path d="M0,1 L0,0.4 C0.2,0.6 0.3,0.2 0.5,0.5 C0.7,0.8 0.8,0.4 1,0.7 L1,1 Z"></path>
+            </clipPath>
+        </defs>
+    </svg>
 
     <section id="services" class="py-32 px-6 max-w-7xl mx-auto grid md:grid-cols-3 gap-10">
         <div class="flip-card reveal">
@@ -171,8 +182,13 @@
         </div>
     </section>
 
+    <footer class="py-20 text-center bg-black/80 backdrop-blur-lg border-t border-white/5">
+        <h2 class="gold-shine font-black text-4xl mb-6 tracking-widest uppercase italic">AGA HOUSE</h2>
+        <div dir="ltr" class="text-[#d4af37] text-2xl font-bold mb-4 tracking-widest">+212 639-506866</div>
+        <p class="text-gray-600 text-[10px] uppercase tracking-widest opacity-50">© 2026 AGA HOUSE . ALL RIGHTS RESERVED</p>
+    </footer>
+
     <script>
-        // Scroll Reveal Animation
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -183,7 +199,6 @@
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // Star Generation
         const stars = document.getElementById('stars-container');
         for (let i = 0; i < 70; i++) {
             const star = document.createElement('div');
