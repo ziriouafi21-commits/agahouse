@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AGA HOUSE - تسويق عقارات فاخرة في المغرب.">
     <title>AGA HOUSE | Luxury Real Estate</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -10,14 +11,59 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap" rel="stylesheet">
     
     <style>
-        body { background: #05070a; font-family: 'Cairo', sans-serif; color: white; margin: 0; overflow-x: hidden; scroll-behavior: smooth; }
-        #particles-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; background: radial-gradient(circle at center, #0d1424 0%, #05070a 100%); }
-        .star { position: absolute; background: white; border-radius: 50%; opacity: 0.3; will-change: transform; animation: twinkleGlow var(--duration) infinite ease-in-out; }
-        @keyframes twinkleGlow { 0%, 100% { opacity: 0.2; transform: scale(1); } 50% { opacity: 0.8; transform: scale(1.3); } }
+        body { 
+            background: #05070a; 
+            font-family: 'Cairo', sans-serif; 
+            color: white; 
+            margin: 0; 
+            overflow-x: hidden; 
+            scroll-behavior: smooth; 
+        }
 
-        /* Perspective for Flip Effect */
+        /* Optimized Background */
+        #particles-container { 
+            position: fixed; 
+            top: 0; left: 0; 
+            width: 100%; height: 100%; 
+            z-index: -1; 
+            pointer-events: none; 
+            background: radial-gradient(circle at center, #0d1424 0%, #05070a 100%); 
+        }
+        .star { 
+            position: absolute; 
+            background: white; 
+            border-radius: 50%; 
+            opacity: 0.3; 
+            will-change: transform; 
+            animation: twinkleGlow var(--duration) infinite ease-in-out; 
+        }
+        @keyframes twinkleGlow { 
+            0%, 100% { opacity: 0.2; transform: scale(1); } 
+            50% { opacity: 0.8; transform: scale(1.3); } 
+        }
+
+        /* Gold Typography */
+        .gold-shine {
+            background: linear-gradient(45deg, #d4af37, #f7dc6f, #f1c40f, #d4af37);
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent;
+            background-clip: text; 
+            animation: shine 4s linear infinite; 
+            background-size: 200% auto;
+        }
+        @keyframes shine { to { background-position: 200% center; } }
+
+        /* Interactive Flip Cards */
         .flip-card { background-color: transparent; width: 100%; height: 380px; perspective: 1000px; }
-        .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1); transform-style: preserve-3d; cursor: pointer; }
+        .flip-card-inner { 
+            position: relative; 
+            width: 100%; 
+            height: 100%; 
+            text-align: center; 
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1); 
+            transform-style: preserve-3d; 
+            cursor: pointer; 
+        }
         .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
 
         .flip-card-front, .flip-card-back {
@@ -31,33 +77,73 @@
         .flip-card-front { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(12px); }
         .flip-card-back { 
             background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, #05070a 100%); 
-            transform: rotateY(180deg); border-color: rgba(212, 175, 55, 0.5); backdrop-filter: blur(20px);
+            transform: rotateY(180deg); 
+            border-color: rgba(212, 175, 55, 0.5); 
+            backdrop-filter: blur(20px);
         }
 
         .icon-container {
-            width: 75px; height: 75px; background: rgba(212, 175, 55, 0.1);
-            border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 20px;
-            display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;
+            width: 75px; height: 75px; 
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3); 
+            border-radius: 20px;
+            display: flex; align-items: center; justify-content: center; 
+            margin-bottom: 1.5rem;
         }
 
-        .gold-shine { background: linear-gradient(45deg, #d4af37, #f7dc6f, #d4af37); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        /* Buttons & Socials */
+        .float-wts {
+            position: fixed; bottom: 30px; right: 30px;
+            background: #25d366; color: white; width: 65px; height: 65px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 30px; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+            z-index: 1000; transition: 0.3s;
+        }
+        .float-wts:hover { transform: scale(1.1) rotate(10deg); }
+        
+        .fb-hover:hover { background-color: #1877f2 !important; border-color: #1877f2 !important; transform: translateY(-5px); }
+        .ig-hover:hover { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888) !important; border-color: transparent !important; transform: translateY(-5px); }
     </style>
 </head>
 
 <body>
     <div id="particles-container"></div>
 
-    <section class="py-24 px-6 max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+    <a href="https://wa.me/212639506866" class="float-wts" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <section class="min-h-screen flex flex-col items-center justify-center text-center p-6">
+        <div class="mb-4 opacity-60 tracking-[0.4em] text-[#d4af37] text-[10px] font-bold uppercase italic">Agadir Premium Real Estate</div>
+        <h1 class="text-7xl md:text-9xl font-black gold-shine mb-4 tracking-tighter leading-none">AGA HOUSE</h1>
+        <h2 class="text-xl md:text-2xl font-light mb-12 text-gray-300 tracking-widest uppercase">الفخامة في تسويق عقارك</h2>
+
+        <div class="flex flex-col md:flex-row gap-6">
+            <a href="https://wa.me/212639506866" class="bg-gradient-to-r from-[#d4af37] to-[#f4d03f] text-black px-12 py-4 rounded-full font-black text-xl transition-all hover:scale-105 shadow-[0_10px_30px_rgba(212,175,55,0.3)]">
+                تواصل معنا للبيع
+            </a>
+            <div class="flex gap-4">
+                <a href="https://web.facebook.com/profile.php?id=61584878821986" target="_blank" class="fb-hover w-14 h-14 border border-white/10 rounded-full flex items-center justify-center transition-all">
+                    <i class="fab fa-facebook-f text-white/70"></i>
+                </a>
+                <a href="https://www.instagram.com/aga_houses/" target="_blank" class="ig-hover w-14 h-14 border border-white/10 rounded-full flex items-center justify-center transition-all">
+                    <i class="fab fa-instagram text-white/70"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 px-6 max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
         
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
                     <div class="icon-container"><i class="fas fa-camera-retro text-[#d4af37] text-3xl"></i></div>
                     <h3 class="text-2xl font-bold mb-4">تصوير احترافي</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed text-center font-light">إظهار الجمال الحقيقي لعقارك بجودة iPhone 12 Pro Max العالية.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">إبراز الجمال الحقيقي لعقارك بجودة iPhone 12 Pro Max العالية.</p>
                 </div>
                 <div class="flip-card-back">
-                    <h3 class="text-[#d4af37] text-xl font-bold mb-4 uppercase">تقنياتنا في التصوير</h3>
+                    <h3 class="text-[#d4af37] text-xl font-bold mb-4">تقنياتنا</h3>
                     <ul class="text-gray-300 text-right text-sm space-y-4">
                         <li><i class="fas fa-magic text-[#d4af37] ml-2"></i> تعديل ألوان احترافي (Color Grading).</li>
                         <li><i class="fas fa-mobile-alt text-[#d4af37] ml-2"></i> زوايا تصوير سينمائية تبرز المساحات.</li>
@@ -72,10 +158,10 @@
                 <div class="flip-card-front">
                     <div class="icon-container"><i class="fas fa-bullhorn text-[#d4af37] text-3xl"></i></div>
                     <h3 class="text-2xl font-bold mb-4">تسويق شخصي</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed text-center font-light">تقديم شرح مفصل وواقعي لعقارك من خلال فيديوهات ترويجية.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed text-center">تقديم شرح مفصل وواقعي لعقارك من خلال فيديوهات ترويجية مخصصة.</p>
                 </div>
                 <div class="flip-card-back">
-                    <h3 class="text-[#d4af37] text-xl font-bold mb-4 uppercase">استراتيجية العرض</h3>
+                    <h3 class="text-[#d4af37] text-xl font-bold mb-4">استراتيجيتنا</h3>
                     <ul class="text-gray-300 text-right text-sm space-y-4">
                         <li><i class="fas fa-microphone text-[#d4af37] ml-2"></i> شرح صوتي كامل لمميزات العقار.</li>
                         <li><i class="fas fa-users text-[#d4af37] ml-2"></i> بناء ثقة مباشرة مع المشتري المحتمل.</li>
@@ -90,24 +176,37 @@
                 <div class="flip-card-front">
                     <div class="icon-container"><i class="fas fa-shield-alt text-[#d4af37] text-3xl"></i></div>
                     <h3 class="text-2xl font-bold mb-4">مواكبة قانونية</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed text-center font-light">نرافقك في كل خطوة من الاستشارة القانونية إلى التوقيع النهائي.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed text-center">نرافقك في كل خطوة من الاستشارة القانونية إلى التوقيع النهائي.</p>
                 </div>
                 <div class="flip-card-back">
-                    <h3 class="text-[#d4af37] text-xl font-bold mb-4 uppercase">ضماناتنا</h3>
+                    <h3 class="text-[#d4af37] text-xl font-bold mb-4">ضماناتنا</h3>
                     <ul class="text-gray-300 text-right text-sm space-y-4">
-                        <li><i class="fas fa-file-contract text-[#d4af37] ml-2"></i> فحص شامل للوثائق والمستندات.</li>
+                        <li><i class="fas fa-file-contract text-[#d4af37] ml-2"></i> فحص شامل لجميع وثائق العقار.</li>
                         <li><i class="fas fa-user-tie text-[#d4af37] ml-2"></i> تنسيق كامل مع الموثق (Notaire).</li>
                         <li><i class="fas fa-handshake text-[#d4af37] ml-2"></i> تأمين حقوق البائع والمشتري بجدية.</li>
                     </ul>
                 </div>
             </div>
         </div>
-
     </section>
+
+    <footer class="py-20 text-center bg-black/40 backdrop-blur-md border-t border-white/5">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="gold-shine font-black text-3xl mb-4 tracking-widest uppercase italic">AGA HOUSE</h2>
+            
+            <div dir="ltr" class="text-[#d4af37] text-2xl font-bold mb-2 tracking-widest">
+                +212 639-506866
+            </div>
+            
+            <p class="text-gray-500 text-xs uppercase tracking-widest mb-10">Agadir • Morocco</p>
+            <p class="text-gray-600 text-[10px] uppercase tracking-widest opacity-50">© 2026 AGA HOUSE . ALL RIGHTS RESERVED</p>
+        </div>
+    </footer>
 
     <script>
         const container = document.getElementById('particles-container');
-        for (let i = 0; i < 80; i++) {
+        const starCount = 80; 
+        for (let i = 0; i < starCount; i++) {
             const star = document.createElement('div');
             star.className = 'star';
             const size = Math.random() * 2 + 0.5;
