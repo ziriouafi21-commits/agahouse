@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AGA HOUSE | Luxury Real Estate Marketing</title>
+    <title>AGA HOUSE | Luxury Real Estate</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
@@ -11,106 +11,109 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap" rel="stylesheet">
     
     <style>
-        body { 
-            background: #05070a; 
-            font-family: 'Cairo', sans-serif; 
-            color: white; 
-            margin: 0; 
-            overflow-x: hidden; 
-            scroll-behavior: smooth;
+        /* LUXURY CURSOR REPLACEMENT */
+        * { cursor: none !important; }
+        #custom-cursor {
+            width: 12px; height: 12px; background: #c5a059; border-radius: 50%;
+            position: fixed; pointer-events: none; z-index: 10000;
+            transition: transform 0.1s ease; box-shadow: 0 0 10px rgba(197, 160, 89, 0.5);
         }
-
-        /* Aura around cursor (Doesn't hide the real mouse) */
-        #cursor-aura {
-            width: 150px; height: 150px;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+        #cursor-follower {
+            width: 35px; height: 35px; border: 1px solid #c5a059; border-radius: 50%;
             position: fixed; pointer-events: none; z-index: 9999;
-            transform: translate(-50%, -50%); transition: 0.1s ease-out;
+            transition: transform 0.15s ease-out; opacity: 0.5;
         }
 
-        #particles-container { 
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
-            z-index: 1; pointer-events: none; 
-        }
-        .star { position: absolute; background: white; border-radius: 50%; opacity: 0.3; animation: twinkleGlow var(--duration) infinite ease-in-out; }
-        @keyframes twinkleGlow { 0%, 100% { opacity: 0.2; } 50% { opacity: 0.8; } }
+        body { background: #030508; font-family: 'Cairo', sans-serif; color: white; margin: 0; overflow-x: hidden; }
 
-        .content-wrapper { position: relative; z-index: 10; }
-
+        /* LUX GOLD COLORS (Champagne Gold) */
+        .gold-lux { color: #c5a059; }
+        .bg-gold-lux { background: #c5a059; }
+        .border-gold-lux { border-color: #c5a059; }
+        
         .gold-shine {
-            background: linear-gradient(45deg, #d4af37, #f7dc6f, #f1c40f, #d4af37);
+            background: linear-gradient(45deg, #8e6d2d 0%, #c5a059 50%, #8e6d2d 100%);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            background-clip: text; animation: shine 4s linear infinite; background-size: 200% auto;
+            background-clip: text; background-size: 200% auto; animation: shine 5s linear infinite;
         }
         @keyframes shine { to { background-position: 200% center; } }
 
-        /* Flip Cards */
+        /* PARTICLES */
+        #particles-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
+        .star { position: absolute; background: white; border-radius: 50%; opacity: 0.2; }
+
+        .content-wrapper { position: relative; z-index: 10; }
+
+        /* FLIP CARDS LUX */
         .flip-card { height: 380px; perspective: 1000px; }
-        .flip-card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.8s; transform-style: preserve-3d; }
+        .flip-card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); transform-style: preserve-3d; }
         .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
         .flip-card-front, .flip-card-back { 
             position: absolute; width: 100%; height: 100%; 
-            backface-visibility: hidden; border-radius: 2rem; 
+            backface-visibility: hidden; border-radius: 1.5rem; 
             display: flex; flex-direction: column; align-items: center; 
-            justify-content: center; padding: 2rem; border: 1px solid rgba(212, 175, 55, 0.2); 
+            justify-content: center; padding: 2rem; border: 1px solid rgba(197, 160, 89, 0.15); 
         }
-        .flip-card-front { background: rgba(10, 15, 25, 0.8); backdrop-filter: blur(10px); }
-        .flip-card-back { background: #d4af37; color: #000; transform: rotateY(180deg); }
+        .flip-card-front { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(15px); }
+        .flip-card-back { background: #c5a059; color: #000; transform: rotateY(180deg); }
 
         .float-wts { 
             position: fixed; bottom: 30px; left: 30px; background: #25d366; 
             color: white; width: 60px; height: 60px; border-radius: 50%; 
             display: flex; align-items: center; justify-content: center; 
-            font-size: 28px; z-index: 100; transition: 0.3s; 
+            font-size: 28px; z-index: 100; transition: 0.3s; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
+        .float-wts:hover { transform: scale(1.1); }
     </style>
 </head>
 
 <body>
-    <div id="cursor-aura"></div>
+    <div id="custom-cursor"></div>
+    <div id="cursor-follower"></div>
     <div id="particles-container"></div>
 
     <div class="content-wrapper">
         <a href="https://wa.me/212639506866" class="float-wts" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
         <header class="h-screen flex flex-col items-center justify-center text-center px-6">
-            <h1 class="reveal text-7xl md:text-9xl font-black gold-shine mb-4">AGA HOUSE</h1>
-            <p class="reveal text-xl text-gray-400 uppercase tracking-widest">التسويق العقاري بمعايير عالمية</p>
-            <div class="reveal mt-10 flex gap-4">
-                <a href="https://wa.me/212639506866" class="bg-[#d4af37] text-black px-10 py-4 rounded-full font-bold hover:scale-105 transition">تواصل معنا للبيع</a>
+            <div class="reveal mb-4 tracking-[0.6em] text-[#c5a059] text-[10px] font-bold uppercase">Agadir • Inezgane • Ait Melloul</div>
+            <h1 class="reveal text-7xl md:text-9xl font-black gold-shine mb-6">AGA HOUSE</h1>
+            <p class="reveal text-lg text-gray-500 uppercase tracking-[0.4em] font-light">إبداع في التسويق العقاري</p>
+            <div class="reveal mt-12">
+                <a href="https://wa.me/212639506866" class="border border-[#c5a059] text-[#c5a059] px-12 py-4 rounded-full font-bold hover:bg-[#c5a059] hover:text-black transition-all duration-500">تواصل معنا للبيع</a>
             </div>
         </header>
 
-        <section class="py-20 px-6 max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+        <section class="py-24 px-6 max-w-7xl mx-auto grid md:grid-cols-3 gap-10">
             <div class="flip-card reveal">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
-                        <i class="fas fa-camera-retro text-4xl text-[#d4af37] mb-4"></i>
-                        <h3 class="text-xl font-bold">إنتاج بصري</h3>
+                        <i class="fas fa-camera-retro text-4xl text-[#c5a059] mb-6"></i>
+                        <h3 class="text-xl font-bold tracking-widest uppercase">إنتاج بصري</h3>
                     </div>
-                    <div class="flip-card-back text-right">
-                        <p class="font-bold mb-2">خدماتنا:</p>
-                        <ul class="text-sm space-y-2">
-                            <li>• تعديل ألوان سينمائي</li>
-                            <li>• زوايا واسعة واحترافية</li>
-                            <li>• مونتاج عالي الجودة</li>
+                    <div class="flip-card-back text-right px-8">
+                        <p class="font-black mb-4 border-b border-black/20 pb-2 text-lg">تميزنا:</p>
+                        <ul class="text-sm space-y-3 font-bold">
+                            <li>• إخراج سينمائي للعقار</li>
+                            <li>• إضاءة وتعديل ألوان راقي</li>
+                            <li>• تركيز على التفاصيل الثمينة</li>
                         </ul>
                     </div>
                 </div>
             </div>
-            
+
             <div class="flip-card reveal" style="transition-delay: 0.2s">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
-                        <i class="fas fa-bullhorn text-4xl text-[#d4af37] mb-4"></i>
-                        <h3 class="text-xl font-bold">تسويق استراتيجي</h3>
+                        <i class="fas fa-bullhorn text-4xl text-[#c5a059] mb-6"></i>
+                        <h3 class="text-xl font-bold tracking-widest uppercase">تسويق استراتيجي</h3>
                     </div>
-                    <div class="flip-card-back text-right">
-                        <p class="font-bold mb-2">خطة العمل:</p>
-                        <ul class="text-sm space-y-2">
-                            <li>• شرح مفصل بالفيديو</li>
-                            <li>• استهداف دقيق للمشترين</li>
-                            <li>• حملات إعلانية ممولة</li>
+                    <div class="flip-card-back text-right px-8">
+                        <p class="font-black mb-4 border-b border-black/20 pb-2 text-lg">منهجيتنا:</p>
+                        <ul class="text-sm space-y-3 font-bold">
+                            <li>• فيديو ترويجي تفصيلي</li>
+                            <li>• استهداف دقيق للمستثمرين</li>
+                            <li>• إدارة حملات السوشل ميديا</li>
                         </ul>
                     </div>
                 </div>
@@ -119,65 +122,67 @@
             <div class="flip-card reveal" style="transition-delay: 0.4s">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
-                        <i class="fas fa-shield-alt text-4xl text-[#d4af37] mb-4"></i>
-                        <h3 class="text-xl font-bold">مواكبة قانونية</h3>
+                        <i class="fas fa-shield-alt text-4xl text-[#c5a059] mb-6"></i>
+                        <h3 class="text-xl font-bold tracking-widest uppercase">مواكبة مهنية</h3>
                     </div>
-                    <div class="flip-card-back text-right">
-                        <p class="font-bold mb-2">الضمانات:</p>
-                        <ul class="text-sm space-y-2">
-                            <li>• تدقيق شامل للوثائق</li>
-                            <li>• تنسيق مع الموثق</li>
-                            <li>• حماية حقوق البائع</li>
+                    <div class="flip-card-back text-right px-8">
+                        <p class="font-black mb-4 border-b border-black/20 pb-2 text-lg">الأمان:</p>
+                        <ul class="text-sm space-y-3 font-bold">
+                            <li>• مراجعة الوثائق القانونية</li>
+                            <li>• تنسيق شامل مع الموثق</li>
+                            <li>• مرافقة حتى إتمام البيع</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="py-20 px-6 max-w-7xl mx-auto text-center">
-            <h2 class="reveal text-3xl font-bold mb-10 gold-shine">مقرنا في أكادير</h2>
-            <div class="reveal rounded-3xl overflow-hidden border border-[#d4af37]/30 h-80 shadow-2xl">
+        <section class="py-24 px-6 max-w-7xl mx-auto text-center">
+            <h2 class="reveal text-3xl font-bold mb-4 gold-shine italic">مناطق عملنا</h2>
+            <p class="reveal text-gray-500 mb-12 text-sm">أكادير • إنزكان • أيت ملول • تمسية • بيوكرى • والنواحي</p>
+            <div class="reveal rounded-[2rem] overflow-hidden border border-[#c5a059]/20 h-96 grayscale hover:grayscale-0 transition-all duration-1000">
                 <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55021.78248834925!2d-9.6105748!3d30.4220365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdb3b6e94144391b%3A0x22442308e84323e2!2sAgadir!5e0!3m2!1sen!2sma!4v1710000000000!5m2!1sen!2sma" 
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d110058.46823924765!2d-9.53930863806152!3d30.38466669940176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sar!2sma!4v1710000000000" 
                     width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
                 </iframe>
             </div>
         </section>
 
-        <footer class="py-20 border-t border-white/10 bg-black/60 text-center">
-            <h2 class="gold-shine text-4xl font-black mb-4 tracking-tighter">AGA HOUSE</h2>
-            <div dir="ltr" class="text-[#d4af37] text-2xl font-bold mb-6">+212 639-506866</div>
-            <div class="flex justify-center gap-6 mb-10">
-                <a href="https://web.facebook.com/profile.php?id=61584878821986" target="_blank" class="hover:text-[#d4af37] transition text-xl"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.instagram.com/aga_houses/" target="_blank" class="hover:text-[#d4af37] transition text-xl"><i class="fab fa-instagram"></i></a>
+        <footer class="py-20 border-t border-white/5 bg-black/80 text-center">
+            <h2 class="gold-shine text-4xl font-black mb-6 tracking-tighter italic">AGA HOUSE</h2>
+            <div dir="ltr" class="text-[#c5a059] text-2xl font-bold mb-8 tracking-[0.2em]">+212 639-506866</div>
+            <div class="flex justify-center gap-8 mb-12 opacity-50">
+                <a href="https://web.facebook.com/profile.php?id=61584878821986" target="_blank" class="hover:text-[#c5a059] transition text-xl"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/aga_houses/" target="_blank" class="hover:text-[#c5a059] transition text-xl"><i class="fab fa-instagram"></i></a>
             </div>
-            <p class="text-gray-600 text-[10px] tracking-[0.3em]">© 2026 AGA HOUSE . AGADIR MOROCCO</p>
+            <p class="text-gray-700 text-[9px] tracking-[0.5em] uppercase">© 2026 AGA HOUSE . PREMIUM SERVICES</p>
         </footer>
     </div>
 
     <script>
-        // Cursor Aura Logic
-        const aura = document.getElementById('cursor-aura');
+        // Custom Mouse Pointer
+        const cursor = document.getElementById('custom-cursor');
+        const follower = document.getElementById('cursor-follower');
+        
         document.addEventListener('mousemove', (e) => {
-            aura.style.left = e.clientX + 'px';
-            aura.style.top = e.clientY + 'px';
+            cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+            follower.style.transform = `translate(${e.clientX - 11}px, ${e.clientY - 11}px)`;
         });
 
-        // Stars Logic
+        // Stars Background
         const container = document.getElementById('particles-container');
-        for (let i = 0; i < 60; i++) {
+        for (let i = 0; i < 50; i++) {
             const star = document.createElement('div');
             star.className = 'star';
-            const size = Math.random() * 2 + 0.5;
+            const size = Math.random() * 1.5;
             star.style.width = size + 'px'; star.style.height = size + 'px';
             star.style.left = Math.random() * 100 + '%'; star.style.top = Math.random() * 100 + '%';
-            star.style.setProperty('--duration', (Math.random() * 3 + 2) + 's');
             container.appendChild(star);
         }
 
-        // Animations
+        // Reveal Animations
         ScrollReveal().reveal('.reveal', {
-            delay: 150, distance: '30px', origin: 'bottom', duration: 800, opacity: 0
+            delay: 200, distance: '20px', origin: 'bottom', duration: 1000, opacity: 0
         });
     </script>
 </body>
