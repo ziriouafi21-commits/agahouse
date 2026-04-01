@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -142,6 +143,7 @@
 <body>
     <div id="particles-container"></div>
 
+    <!-- Navbar -->
     <nav id="navbar">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <span class="gold-shine font-black text-xl tracking-widest">AGA HOUSE</span>
@@ -159,11 +161,14 @@
         </div>
     </nav>
 
+    <!-- WhatsApp Float -->
     <a href="https://wa.me/212639506866" class="float-wts" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <!-- Hero -->
     <section class="min-h-screen flex flex-col items-center justify-center text-center p-6 pt-24">
+        <!-- Lang toggle -->
         <div class="flex mb-6">
             <div class="flex bg-white/5 border border-white/10 rounded-full p-1 gap-1">
                 <button onclick="setLang('ar')" id="lang-ar" class="lang-btn active-lang px-5 py-2 rounded-full text-sm font-bold transition-all">العربية</button>
@@ -200,6 +205,7 @@
             </div>
         </div>
 
+        <!-- Stats -->
         <div class="mt-20 grid grid-cols-3 gap-12 opacity-60">
             <div class="text-center">
                 <div class="text-3xl font-black text-[#d4af37]">+50</div>
@@ -219,6 +225,7 @@
         </div>
     </section>
 
+    <!-- Services -->
     <section id="services" class="py-12 px-6 max-w-7xl mx-auto fade-in">
         <div class="text-center mb-12">
             <div class="text-[#d4af37] text-xs tracking-[0.3em] uppercase mb-3 opacity-60 lang-ar">ما نقدمه</div>
@@ -335,6 +342,7 @@
         </div>
     </section>
 
+    <!-- How it works -->
     <section id="how" class="py-20 px-6 fade-in">
         <div class="max-w-5xl mx-auto">
             <div class="text-center mb-16">
@@ -378,6 +386,7 @@
         </div>
     </section>
 
+    <!-- Properties -->
     <section id="properties" class="py-20 px-6 fade-in">
         <div class="max-w-5xl mx-auto">
             <div class="text-center mb-12">
@@ -387,18 +396,22 @@
                 <h2 class="text-4xl font-black lang-fr hidden">Maison à Timssia</h2>
             </div>
 
+            <!-- Big property card -->
             <div class="prop-card overflow-visible" style="border-color:rgba(212,175,55,0.25)">
 
+                <!-- Image placeholder top -->
                 <div class="prop-img-placeholder relative" style="height:280px">
                     <i class="fas fa-home text-[#d4af37]/10" style="font-size:7rem"></i>
                     <span class="status-badge badge-sale" style="font-size:13px;padding:6px 16px">للبيع</span>
                     <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#0d1424] to-transparent"></div>
+                    <!-- Tip for owner -->
                     <div class="absolute top-3 left-3 bg-black/60 backdrop-blur text-[10px] text-gray-400 px-3 py-1 rounded-full border border-white/10">
                         📷 ضع صورك هنا
                     </div>
                 </div>
 
                 <div class="p-6 md:p-8">
+                    <!-- Header -->
                     <div class="flex flex-wrap justify-between items-start gap-4 mb-6">
                         <div>
                             <h3 class="text-2xl font-black mb-1">
@@ -421,6 +434,7 @@
                         </div>
                     </div>
 
+                    <!-- Quick stats -->
                     <div class="grid grid-cols-3 md:grid-cols-6 gap-3 mb-8">
                         <div class="bg-white/[0.03] border border-white/5 rounded-xl p-3 text-center">
                             <i class="fas fa-ruler-combined text-[#d4af37] text-lg mb-1 block"></i>
@@ -462,7 +476,10 @@
                         </div>
                     </div>
 
+                    <!-- Floors detail -->
                     <div class="space-y-4 mb-8">
+
+                        <!-- Floor 1 -->
                         <div class="border border-[#d4af37]/15 rounded-2xl overflow-hidden">
                             <div class="bg-[#d4af37]/8 px-5 py-3 flex items-center gap-3 border-b border-[#d4af37]/10">
                                 <i class="fas fa-door-open text-[#d4af37]"></i>
@@ -483,14 +500,112 @@
                                     </div>
                                     <div class="flex items-center gap-2 text-sm text-gray-300">
                                         <i class="fas fa-check-circle text-[#d4af37]/70 text-xs"></i>
+                                        <span class="lang-ar">طواليط</span>
+                                        <span class="lang-fr hidden">WC séparé</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 text-sm text-gray-300">
+                                        <i class="fas fa-check-circle text-[#d4af37]/70 text-xs"></i>
                                         <span class="lang-ar">مطبخ</span>
                                         <span class="lang-fr hidden">Cuisine</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 text-sm text-gray-300">
+                                        <i class="fas fa-check-circle text-[#d4af37]/70 text-xs"></i>
+                                        <span class="lang-ar">مراح (فناء داخلي)</span>
+                                        <span class="lang-fr hidden">Mrah (patio intérieur)</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 text-sm text-gray-300">
+                                        <i class="fas fa-check-circle text-[#d4af37]/70 text-xs"></i>
+                                        <span class="lang-ar">مساحة تخزين تحت الدرج</span>
+                                        <span class="lang-fr hidden">Rangement sous escalier</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floor 2 -->
+                        <div class="border border-[#d4af37]/15 rounded-2xl overflow-hidden">
+                            <div class="bg-[#d4af37]/8 px-5 py-3 flex items-center gap-3 border-b border-[#d4af37]/10">
+                                <i class="fas fa-stairs text-[#d4af37]"></i>
+                                <span class="font-bold text-sm lang-ar">الطابق الثاني</span>
+                                <span class="font-bold text-sm lang-fr hidden">1er étage</span>
+                            </div>
+                            <div class="p-5">
+                                <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+                                    <div class="flex items-center gap-2 text-sm text-gray-300">
+                                        <i class="fas fa-check-circle text-[#d4af37]/70 text-xs"></i>
+                                        <span class="lang-ar">صالون</span>
+                                        <span class="lang-fr hidden">Salon</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 text-sm text-gray-300">
+                                        <i class="fas fa-check-circle text-[#d4af37]/70 text-xs"></i>
+                                        <span class="lang-ar">2 غرف</span>
+                                        <span class="lang-fr hidden">2 chambres</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 text-sm text-gray-300">
+                                        <i class="fas fa-check-circle text-[#d4af37]/70 text-xs"></i>
+                                        <span class="lang-ar">مراح كبير</span>
+                                        <span class="lang-fr hidden">Grand patio</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 text-sm text-gray-300">
+                                        <i class="fas fa-check-circle text-[#d4af37]/70 text-xs"></i>
+                                        <span class="lang-ar">كوزينة</span>
+                                        <span class="lang-fr hidden">Cuisine</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 text-sm text-gray-300">
+                                        <i class="fas fa-check-circle text-[#d4af37]/70 text-xs"></i>
+                                        <span class="lang-ar">طواليط</span>
+                                        <span class="lang-fr hidden">WC</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 text-sm text-gray-300">
+                                        <i class="fas fa-spa text-[#d4af37]/70 text-xs"></i>
+                                        <span class="lang-ar">دوش بجاكوزي</span>
+                                        <span class="lang-fr hidden">Douche avec jacuzzi</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floor 3 / Rooftop -->
+                        <div class="border border-[#d4af37]/15 rounded-2xl overflow-hidden">
+                            <div class="bg-[#d4af37]/8 px-5 py-3 flex items-center gap-3 border-b border-[#d4af37]/10">
+                                <i class="fas fa-sun text-[#d4af37]"></i>
+                                <span class="font-bold text-sm lang-ar">الطابق الثالث — السطح</span>
+                                <span class="font-bold text-sm lang-fr hidden">Terrasse (3ème niveau)</span>
+                            </div>
+                            <div class="p-5">
+                                <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+                                    <div class="flex items-center gap-2 text-sm text-gray-300">
+                                        <i class="fas fa-check-circle text-[#d4af37]/70 text-xs"></i>
+                                        <span class="lang-ar">2 غرف</span>
+                                        <span class="lang-fr hidden">2 chambres</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 text-sm text-gray-300">
+                                        <i class="fas fa-check-circle text-[#d4af37]/70 text-xs"></i>
+                                        <span class="lang-ar">طواليط</span>
+                                        <span class="lang-fr hidden">WC</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 text-sm text-gray-300">
+                                        <i class="fas fa-check-circle text-[#d4af37]/70 text-xs"></i>
+                                        <span class="lang-ar">سطح مفتوح</span>
+                                        <span class="lang-fr hidden">Terrasse ouverte</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
+                    <!-- Location note -->
+                    <div class="bg-[#d4af37]/5 border border-[#d4af37]/20 rounded-2xl p-4 mb-6 flex gap-3 items-start">
+                        <i class="fas fa-map-pin text-[#d4af37] mt-1"></i>
+                        <div>
+                            <div class="font-bold text-sm text-[#d4af37] mb-1 lang-ar">الموقع المتميز</div>
+                            <div class="font-bold text-sm text-[#d4af37] mb-1 lang-fr hidden">Emplacement privilégié</div>
+                            <p class="text-gray-400 text-sm leading-relaxed lang-ar">المنزل يبعد أمتار قليلة عن الطريق الوطنية المارة في التمسية، مع زنقة هادئة وكالم — بعيد عن الضجيج ومع سهولة الوصول.</p>
+                            <p class="text-gray-400 text-sm leading-relaxed lang-fr hidden">La maison se situe à quelques mètres de la route nationale passant par Timssia, dans une ruelle calme — loin du bruit tout en étant facilement accessible.</p>
+                        </div>
+                    </div>
+
+                    <!-- CTA -->
                     <a href="https://wa.me/212639506866?text=السلام عليكم، بغيت معلومات على منزل التمسية 98م²" target="_blank"
                        class="block text-center bg-gradient-to-r from-[#d4af37] to-[#f4d03f] text-black py-4 rounded-2xl font-black text-base transition-all hover:scale-[1.02] shadow-[0_10px_30px_rgba(212,175,55,0.2)]">
                         <i class="fab fa-whatsapp ml-2"></i>
@@ -502,16 +617,83 @@
         </div>
     </section>
 
+    <!-- Video Section -->
+    <section class="py-20 px-6 fade-in">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <div class="text-[#d4af37] text-xs tracking-[0.3em] uppercase mb-3 opacity-60 lang-ar">مثال</div>
+                <div class="text-[#d4af37] text-xs tracking-[0.3em] uppercase mb-3 opacity-60 lang-fr hidden">Exemple</div>
+                <h2 class="text-4xl font-black lang-ar">كيفاش كنسوّرو</h2>
+                <h2 class="text-4xl font-black lang-fr hidden">Comment on filme</h2>
+                <p class="text-gray-500 text-sm mt-3 lang-ar">شوف نموذج من الفيديوهات ديالنا</p>
+                <p class="text-gray-500 text-sm mt-3 lang-fr hidden">Découvrez un exemple de nos vidéos</p>
+            </div>
+            <div class="vid-wrapper">
+                <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:rgba(212,175,55,0.03);position:absolute;top:0;left:0;flex-direction:column;gap:1rem;">
+                    <div class="icon-container" style="margin:0"><i class="fas fa-play text-[#d4af37] text-3xl"></i></div>
+                    <p class="text-gray-500 text-sm lang-ar">ضع هنا رابط فيديو يوتيوب ديالك</p>
+                    <p class="text-gray-500 text-sm lang-fr hidden">Ajoutez ici votre lien vidéo YouTube</p>
+                    <p class="text-gray-600 text-xs">&lt;iframe src="https://www.youtube.com/embed/VIDEO_ID"&gt;</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-20 px-6 fade-in">
+        <div class="max-w-2xl mx-auto">
+            <div class="text-center mb-12">
+                <div class="text-[#d4af37] text-xs tracking-[0.3em] uppercase mb-3 opacity-60 lang-ar">ابدأ الآن</div>
+                <div class="text-[#d4af37] text-xs tracking-[0.3em] uppercase mb-3 opacity-60 lang-fr hidden">Commencez maintenant</div>
+                <h2 class="text-4xl font-black lang-ar">تواصل معنا</h2>
+                <h2 class="text-4xl font-black lang-fr hidden">Contactez-nous</h2>
+                <p class="text-gray-500 text-sm mt-3 lang-ar">سواء بغيتي تبيع أو تشري — نحن هنا</p>
+                <p class="text-gray-500 text-sm mt-3 lang-fr hidden">Que vous vouliez vendre ou acheter — nous sommes là</p>
+            </div>
+            <div class="bg-white/[0.02] border border-[#d4af37]/10 rounded-3xl p-8 space-y-4">
+                <input type="text" class="form-input" id="f-name" />
+                <input type="tel" class="form-input" id="f-phone" dir="ltr" placeholder="+212 6XX XXX XXX" />
+                <select class="form-input" id="f-type">
+                    <option value="sell" selected>
+                        <span class="lang-ar">بغيت نبيع عقار</span>Je veux vendre
+                    </option>
+                    <option value="buy">بغيت نشري / Je veux acheter</option>
+                    <option value="rent">بغيت نكري / Je veux louer</option>
+                </select>
+                <input type="text" class="form-input" id="f-prop" />
+                <textarea class="form-input" rows="3" id="f-note" style="resize:none"></textarea>
+                <button onclick="sendWhatsApp()" class="w-full bg-gradient-to-r from-[#d4af37] to-[#f4d03f] text-black py-4 rounded-2xl font-black text-lg transition-all hover:scale-[1.02] shadow-[0_10px_30px_rgba(212,175,55,0.2)]">
+                    <i class="fab fa-whatsapp ml-2"></i>
+                    <span class="lang-ar">إرسال عبر واتساب</span>
+                    <span class="lang-fr hidden">Envoyer via WhatsApp</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="py-20 text-center bg-black/40 backdrop-blur-md border-t border-white/5">
         <div class="max-w-4xl mx-auto px-6">
             <h2 class="gold-shine font-black text-3xl mb-4 tracking-widest uppercase italic">AGA HOUSE</h2>
             <div dir="ltr" class="text-[#d4af37] text-2xl font-bold mb-2 tracking-widest">+212 639-506866</div>
+            <p class="text-gray-500 text-xs uppercase tracking-widest mb-8">Agadir • Morocco</p>
+            <div class="flex justify-center gap-6 mb-10">
+                <a href="https://web.facebook.com/profile.php?id=61584878821986" target="_blank" class="fb-hover w-10 h-10 border border-white/10 rounded-full flex items-center justify-center transition-all">
+                    <i class="fab fa-facebook-f" style="color:rgba(255,255,255,0.5);font-size:14px"></i>
+                </a>
+                <a href="https://www.instagram.com/aga_houses/" target="_blank" class="ig-hover w-10 h-10 border border-white/10 rounded-full flex items-center justify-center transition-all">
+                    <i class="fab fa-instagram" style="color:rgba(255,255,255,0.5);font-size:14px"></i>
+                </a>
+                <a href="https://wa.me/212639506866" target="_blank" class="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center transition-all hover:bg-[#25d366] hover:border-[#25d366]">
+                    <i class="fab fa-whatsapp" style="color:rgba(255,255,255,0.5);font-size:15px"></i>
+                </a>
+            </div>
             <p class="text-gray-600 text-[10px] uppercase tracking-widest opacity-50">© 2026 AGA HOUSE . ALL RIGHTS RESERVED</p>
         </div>
     </footer>
 
     <script>
-        // Star Particles Logic
+        // Stars
         const container = document.getElementById('particles-container');
         for (let i = 0; i < 80; i++) {
             const star = document.createElement('div');
@@ -523,12 +705,36 @@
             container.appendChild(star);
         }
 
-        // Navbar Scroll Effect
+        // Navbar scroll
         window.addEventListener('scroll', () => {
             document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
         });
 
-        // Language Switcher Function
+        // Fade in on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Lang toggle
+        const translations = {
+            ar: {
+                name: 'الاسم الكامل',
+                prop: 'نوع العقار (شقة، فيلا، محل...)',
+                note: 'ملاحظات إضافية (اختياري)',
+                opt_sell: 'بغيت نبيع عقار',
+                opt_buy: 'بغيت نشري',
+                opt_rent: 'بغيت نكري'
+            },
+            fr: {
+                name: 'Nom complet',
+                prop: 'Type de bien (appartement, villa...)',
+                note: 'Notes supplémentaires (optionnel)',
+                opt_sell: 'Je veux vendre',
+                opt_buy: 'Je veux acheter',
+                opt_rent: 'Je veux louer'
+            }
+        };
         function setLang(lang) {
             const isAr = lang === 'ar';
             document.querySelectorAll('.lang-ar').forEach(el => el.classList.toggle('hidden', !isAr));
@@ -536,8 +742,29 @@
             document.getElementById('lang-ar').classList.toggle('active-lang', isAr);
             document.getElementById('lang-fr').classList.toggle('active-lang', !isAr);
             document.documentElement.setAttribute('dir', isAr ? 'rtl' : 'ltr');
+            document.documentElement.setAttribute('lang', isAr ? 'ar' : 'fr');
+            const t = isAr ? translations.ar : translations.fr;
+            document.getElementById('f-name').placeholder = t.name;
+            document.getElementById('f-prop').placeholder = t.prop;
+            document.getElementById('f-note').placeholder = t.note;
+            const sel = document.getElementById('f-type');
+            sel.options[0].text = t.opt_sell;
+            sel.options[1].text = t.opt_buy;
+            sel.options[2].text = t.opt_rent;
         }
         setLang('ar');
+
+        // WhatsApp contact form
+        function sendWhatsApp() {
+            const name = document.getElementById('f-name').value;
+            const phone = document.getElementById('f-phone').value;
+            const type = document.getElementById('f-type').options[document.getElementById('f-type').selectedIndex].text;
+            const prop = document.getElementById('f-prop').value;
+            const note = document.getElementById('f-note').value;
+            if (!name || !phone) { alert('الاسم ورقم الهاتف مطلوبان'); return; }
+            const msg = `السلام عليكم، أنا ${name} (${phone}).\n${type}.\nنوع العقار: ${prop || 'غير محدد'}.\n${note ? 'ملاحظة: ' + note : ''}`;
+            window.open(`https://wa.me/212639506866?text=${encodeURIComponent(msg)}`, '_blank');
+        }
     </script>
 </body>
 </html>
